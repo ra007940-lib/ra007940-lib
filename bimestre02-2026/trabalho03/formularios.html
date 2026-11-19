@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulário de Cadastro</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <main class="container py-4">
+    <div class="card">
+      <div class="card-body p-3 p-md-4">
+        <form id="cadastro" aria-label="Formulário de cadastro">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nomeFantasia" class="form-label">Nome Fantasia ou primeiro nome</label>
+              <input type="text" class="form-control" id="nomeFantasia" name="nomeFantasia">
+            </div>
+
+            <fieldset class="col-md-6">
+              <legend class="form-label fs-6">Pessoa</legend>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="pessoaFisica" name="pessoa" value="fisica">
+                <label for="pessoaFisica" class="form-check-label">Física</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="pessoaJuridica" name="pessoa" value="juridica">
+                <label for="pessoaJuridica" class="form-check-label">Jurídica</label>
+              </div>
+            </fieldset>
+
+            <div class="col-12">
+              <div class="row">
+                <div class="col-md-8">
+                  <label for="razao" class="form-label">Razão</label>
+                  <input type="text" class="form-control" id="razao" name="razao">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="cnpj" class="form-label">CNPJ</label>
+                  <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <label for="endereco" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="endereco" name="endereco">
+            </div>
+            <div class="col-md-4">
+              <label for="bairro" class="form-label">Bairro</label>
+              <input type="text" class="form-control" id="bairro" name="bairro">
+            </div>
+
+            <div class="col-md-6">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" name="cidade">
+            </div>
+            <div class="col-md-3">
+              <label for="estado" class="form-label">Estado</label>
+              <select class="form-select" id="estado" name="estado">
+                <option value="MG" selected>Minas Gerais</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="cep" class="form-label">CEP</label>
+              <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000">
+            </div>
+
+            <div class="col-md-4">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="tel" class="form-control" id="telefone" name="telefone">
+            </div>
+            <div class="col-md-4">
+              <label for="celular" class="form-label">Celular</label>
+              <input type="tel" class="form-control" id="celular" name="celular">
+            </div>
+            <div class="col-md-4">
+              <label for="fax" class="form-label">Fax</label>
+              <input type="tel" class="form-control" id="fax" name="fax">
+            </div>
+
+            <div class="col-md-6">
+              <label for="contato" class="form-label">Contato</label>
+              <input type="text" class="form-control" id="contato" name="contato">
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="receberAvisos" name="receberAvisos" checked>
+                <label for="receberAvisos" class="form-check-label">Receber e-mails de aviso sobre novas licitações</label>
+              </div>
+            </div>
+
+            <fieldset class="col-12 mt-4">
+              <legend class="form-label fs-6">Tipo de empresa</legend>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="pequenaEmpresa" name="tipoEmpresa" value="pequena">
+                <label for="pequenaEmpresa" class="form-check-label">MICRO EMPRESAS / EMPRESAS DE PEQUENO PORTE</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="demaisEmpresas" name="tipoEmpresa" value="demais">
+                <label for="demaisEmpresas" class="form-check-label">DEMAIS FORMAS DE CONSTITUIÇÃO</label>
+              </div>
+            </fieldset>
+
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-primary">Salvar cadastro</button>
+            </div>
+          </div>
+
+          <p class="mt-4 mb-0">ATENÇÃO: Este cadastro não substitui o cadastro de fornecedores do município de São Sebastião do Paraíso</p>
+          <p class="mb-0" id="mensagem" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('cadastro').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('mensagem').textContent = 'Formulário de demonstração. Os dados não foram salvos.';
+    });
+  </script>
+</body>
+</html>
